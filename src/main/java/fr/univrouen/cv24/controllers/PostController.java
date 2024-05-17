@@ -13,22 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.univrouen.cv24.model.AutreType;
 import fr.univrouen.cv24.model.CV;
-import fr.univrouen.cv24.model.CertifType;
 import fr.univrouen.cv24.model.Certification;
-import fr.univrouen.cv24.model.CompType;
-import fr.univrouen.cv24.model.Cv24Type;
-import fr.univrouen.cv24.model.DetailType;
-import fr.univrouen.cv24.model.DipType;
 import fr.univrouen.cv24.model.Diplome;
-import fr.univrouen.cv24.model.DiversType;
 import fr.univrouen.cv24.model.ExperienceProfessionnelle;
-import fr.univrouen.cv24.model.IdentiteType;
-import fr.univrouen.cv24.model.LvType;
-import fr.univrouen.cv24.model.ObjType;
-import fr.univrouen.cv24.model.ProfType;
 import fr.univrouen.cv24.model.TitreDiplome;
+import fr.univrouen.cv24.model.parser.AutreType;
+import fr.univrouen.cv24.model.parser.CertifType;
+import fr.univrouen.cv24.model.parser.CompType;
+import fr.univrouen.cv24.model.parser.Cv24Type;
+import fr.univrouen.cv24.model.parser.DetailType;
+import fr.univrouen.cv24.model.parser.DipType;
+import fr.univrouen.cv24.model.parser.DiversType;
+import fr.univrouen.cv24.model.parser.IdentiteType;
+import fr.univrouen.cv24.model.parser.LvType;
+import fr.univrouen.cv24.model.parser.ObjType;
+import fr.univrouen.cv24.model.parser.ProfType;
 import fr.univrouen.cv24.repository.CVRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -99,8 +99,14 @@ public class PostController {
 	            
 	            List<Certification> certifications = new ArrayList<Certification>();
 	            for(CertifType certif : cv24.getCompetences().getCertif()) {
-	            	
+	            	Certification c = new Certification();
+	            	c.setCv(newCV);
+	            	c.setDateDebut(certif.getDatedeb().toGregorianCalendar().getTime());
+	            	c.setDateFin(certif.getDatefin().toGregorianCalendar().getTime());
+	            	c.setTitre(certif.getTitre());
+	            	certifications.add(c);
 	            }
+	            newCV.setCertifications(certifications);
 
 	            cvRepository.save(newCV);
 

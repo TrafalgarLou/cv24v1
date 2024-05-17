@@ -24,7 +24,7 @@ public class Diplome {
 
     private int niveau;
     private Date dateObtention;
-    private String institut;
+    private String institut;    
     
     @OneToMany(mappedBy = "diplome", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TitreDiplome> titres;

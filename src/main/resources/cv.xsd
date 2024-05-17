@@ -139,14 +139,14 @@
 			<xs:element name="date" type="xs:date" />
 			<xs:element name="institut" type="string32" minOccurs="0" maxOccurs="1"/>			
 		</xs:sequence>
+		<xs:attribute name="niveau"  type="niveauType" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="certifType">
 		<xs:sequence>
 			<xs:element name="datedeb" type="xs:date" />
 			<xs:element name="datefin" type="xs:date" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="titre" type="string32" />
-		</xs:sequence>
-		<xs:attribute name="niveau"  type="niveauType"/>
+		</xs:sequence>	
 	</xs:complexType>
 	<xs:complexType name="diversType" >
 		<xs:sequence>
