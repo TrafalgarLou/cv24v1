@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv24 xmlns="http://univ.fr/cv24">
+    <identite>
+        <genre>M</genre>
+        <nom>DUPONT</nom>
+        <prenom>Jean</prenom>
+        <tel>0123456789</tel>
+        <mel>jean.dupont@example.com</mel>
+    </identite>
+    <objectif status="stage">
+        <objectif>Objectif professionnel...</objectif>
+    </objectif>
+    <prof>
+        <detail>
+            <datedeb>2024-01-01</datedeb>
+            <datefin>2024-12-31</datefin>
+            <titre>Titre du poste</titre>
+        </detail>
+        <detail>
+            <datedeb>2023-01-01</datedeb>
+            <datefin>2023-12-31</datefin>
+            <titre>Autre poste</titre>
+        </detail>
+    </prof>
+    <competences>
+        <diplome>
+            <diplome>Baccalaureat</diplome>
+            <date>2022-06-30</date>
+            <institut>Lycee XYZ</institut>
+        </diplome>
+        <certif niveau="5">
+            <datedeb>2023-01-01</datedeb>
+            <datefin>2023-06-30</datefin>
+            <titre>Certification XYZ</titre>
+        </certif>
+    </competences>
+</cv24>
