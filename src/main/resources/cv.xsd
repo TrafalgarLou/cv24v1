@@ -5,7 +5,7 @@
 <xs:simpleType name="genreType" >
 <xs:restriction base="xs:string">
 	<xs:enumeration value="M" />
-	<xs:enumeration value="Mme" />
+	<xs:enumeration value="MME" />
 </xs:restriction>
 </xs:simpleType>
 <xs:simpleType name="nivsType">         

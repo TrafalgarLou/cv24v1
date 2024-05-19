@@ -9,8 +9,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
+@Table(uniqueConstraints = {
+	    @UniqueConstraint(columnNames = {"genre", "nom", "prenom", "tel"})
+	})
 public class CV {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
