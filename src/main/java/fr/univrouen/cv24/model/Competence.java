@@ -16,17 +16,20 @@ public class Competence {
     @ManyToOne
     @JoinColumn(name = "cv_id")
     private CV cv;
-
-    private int niveauQualification;
-    private String titre;
+    private int nivi;
+    private String nivs;
+    private String cert;
+    private String lang;    
     
     // Constructeurs
     public Competence() {
     }
 
-    public Competence(int niveauQualification, String titre) {
-        this.niveauQualification = niveauQualification;
-        this.titre = titre;
+    public Competence(int nivi, String nivs, String cert, String lang) {
+        this.nivi = nivi;
+        this.nivs = nivs;
+        this.cert = cert;
+        this.lang = lang;        
     }
 
     // Getters et setters
@@ -46,19 +49,35 @@ public class Competence {
         this.cv = cv;
     }
 
-    public int getNiveauQualification() {
-        return niveauQualification;
+    public int getNivi() {
+        return nivi;
     }
 
-    public void setNiveauQualification(int niveauQualification) {
-        this.niveauQualification = niveauQualification;
+    public void setNivi(int nivi) {
+        this.nivi = nivi;
     }
 
-    public String getTitre() {
-        return titre;
+    public String getNivs() {
+        return nivs;
     }
 
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public void setNivs(String nivs) {
+        this.nivs = nivs;
+    }
+
+    public String getCert() {
+        return cert;
+    }
+
+    public void setCert(String cert) {
+        this.cert = cert;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
     }
 }

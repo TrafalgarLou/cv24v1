@@ -1,5 +1,6 @@
 package fr.univrouen.cv24.model;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class Diplome {
     @JoinColumn(name = "cv_id")
     private CV cv;
 
-    private int niveau;
+    private BigInteger niveau;
     private Date dateObtention;
     private String institut;    
     
@@ -33,7 +34,7 @@ public class Diplome {
     public Diplome() {
     }
 
-    public Diplome(int niveau, Date dateObtention, String institut) {
+    public Diplome(BigInteger niveau, Date dateObtention, String institut) {
         this.niveau = niveau;
         this.dateObtention = dateObtention;
         this.institut = institut;      
@@ -56,11 +57,11 @@ public class Diplome {
         this.cv = cv;
     }
 
-    public int getNiveau() {
+    public BigInteger getNiveau() {
         return niveau;
     }
 
-    public void setNiveau(int niveau) {
+    public void setNiveau(BigInteger niveau) {
         this.niveau = niveau;
     }
 
