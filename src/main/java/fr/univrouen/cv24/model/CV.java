@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(uniqueConstraints = {
-	    @UniqueConstraint(columnNames = {"genre", "nom", "prenom", "tel"})
+	    @UniqueConstraint(columnNames = {"nom", "prenom", "tel"})
 	})
 public class CV {
     @Id
@@ -22,11 +23,22 @@ public class CV {
     private long id;
     
     private String genre;
+    @Column(name = "nom")
     private String nom;
+    
+    @Column(name = "prenom")
     private String prenom;
+    
+    @Column(name = "tel")
     private String tel;
+    
+    @Column(name = "mel")
     private String mel;
+    
+    @Column(name = "objectif")
     private String objectif;
+    
+    @Column(name = "status")
     private String status;
     
     @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL, orphanRemoval = true)

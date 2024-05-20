@@ -8,6 +8,6 @@ import fr.univrouen.cv24.model.CV;
 
 public interface CVRepository extends JpaRepository<CV,Long>{	
 
-	Optional<CV> findByGenreAndNomAndPrenomAndTel(String genre, String nom, String prenom, String tel);
+	Optional<CV> findByNomAndPrenomAndTel(String nom, String prenom, String tel);
 
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des CV</title>
+    <link rel="stylesheet" type="text/css" href="/css/resume.css">
+</head>
+<body>
+<h1>Liste des CV</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Identité</th>
+        <th>Objectif</th>
+        <th>Diplôme le plus récent</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cv : ${cvs}">
+        <td th:text="${cv.id}"></td>
+        <td th:text="${cv.genre + ' ' + cv.prenom + ' ' + cv.nom}"></td>
+        <td th:text="${cv.objectif}"></td>
+        <td>
+            <!-- Display the title of the first diploma -->
+            <span th:if="${cv.diplomes.size() > 0}" th:text="${cv.diplomes[0].titre[0].titre}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

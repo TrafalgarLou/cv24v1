@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+</head>
+<body>
+    <div class="cv-container">
+        <h1>CV de [[${cv.genre}]] [[${cv.prenom}]] [[${cv.nom}]]</h1>
+        
+        <div class="personal-info">            
+            <p>Téléphone: [[${cv.tel}]]</p>
+            <p>Email: [[${cv.mel}]]</p>
+        </div>
+        
+        <div class="objective">
+            <h2>Objectif professionnel : En recherche d'un [[${cv.status}]]</h2>
+            <p>[[${cv.objectif}]]</p>			
+        </div>
+        
+        <div class="experiences">
+            <h2>Expériences professionnelles</h2>
+            <ul>
+                <li th:each="exp : ${cv.experiencesProfessionnelles}">
+                    <p><strong>[[${exp.titre}]]</strong></p>
+                    <p>Début: [[${exp.dateDebut}]]</p>
+                    <p>Fin: [[${exp.dateFin}]]</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="education">
+            <h2>Formation</h2>
+            <ul>
+                <li th:each="diplome : ${cv.diplomes}">
+                    <p><strong>[[${diplome.institut}]]</strong></p>
+                    <p>Date d'obtention: [[${diplome.dateObtention}]]</p>
+                    <p>Niveau: [[${diplome.niveau}]]</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li th:each="certif : ${cv.certifications}">
+                    <p><strong>[[${certif.titre}]]</strong></p>
+                    <p>Début: [[${certif.dateDebut}]]</p>
+                    <p>Fin: [[${certif.dateFin}]]</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="competences">
+            <h2>Compétences</h2>
+            <ul>
+                <li th:each="competence : ${cv.competences}">
+                    <p><strong>[[${competence.lang}]]</strong></p>
+                    <p>Certification: [[${competence.cert}]]</p>
+                    <p>Niveau écrit: [[${competence.nivi}]]</p>
+                    <p>Niveau oral: [[${competence.nivs}]]</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="additional-info">
+            <h2>Informations complémentaires</h2>
+            <ul>
+                <li th:each="info : ${cv.informationsComplementaires}">
+                    <p><strong>[[${info.titre}]]</strong></p>
+                    <p>[[${info.commentaire}]]</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

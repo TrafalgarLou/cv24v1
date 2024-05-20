@@ -16,16 +16,17 @@ public class Competence {
     @ManyToOne
     @JoinColumn(name = "cv_id")
     private CV cv;
-    private int nivi;
+    
+    private String nivi;
     private String nivs;
     private String cert;
     private String lang;    
     
     // Constructeurs
-    public Competence() {
+    public Competence() {    	 
     }
 
-    public Competence(int nivi, String nivs, String cert, String lang) {
+    public Competence(String nivi, String nivs, String cert, String lang) {
         this.nivi = nivi;
         this.nivs = nivs;
         this.cert = cert;
@@ -49,11 +50,11 @@ public class Competence {
         this.cv = cv;
     }
 
-    public int getNivi() {
+    public String getNivi() {
         return nivi;
     }
 
-    public void setNivi(int nivi) {
+    public void setNivi(String nivi) {
         this.nivi = nivi;
     }
 
