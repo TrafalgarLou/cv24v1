@@ -13,6 +13,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -34,9 +35,10 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "genreType")
 @XmlEnum
 public enum GenreType {
-
+	@XmlEnumValue("M")
     M("M"),    
-    MME("Mme");
+    @XmlEnumValue("MME")
+    MME("MME");
     private final String value;
 
     GenreType(String v) {

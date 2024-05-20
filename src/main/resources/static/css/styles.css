@@ -1,0 +1,70 @@
+/* Reset de la mise en page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.cv-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+/* Styles spécifiques aux sections du CV */
+.personal-info, .objective, .experiences, .education, .certifications, .competences, .additional-info {
+    margin-bottom: 30px;
+}
+
+.personal-info p {
+    margin-bottom: 10px;
+}
+
+.objective p {
+    margin-bottom: 15px;
+}
+
+.experiences ul li, .education ul li, .certifications ul li, .competences ul li, .additional-info ul li {
+    border-left: 3px solid #007bff;
+    padding-left: 10px;
+}
+
+.experiences ul li p, .education ul li p, .certifications ul li p, .competences ul li p, .additional-info ul li p {
+    margin-bottom: 5px;
+}
+
+.experiences ul li p:first-child, .education ul li p:first-child, .certifications ul li p:first-child, .competences ul li p:first-child, .additional-info ul li p:first-child {
+    font-weight: bold;
+}
+
+.experiences ul li p:last-child, .education ul li p:last-child, .certifications ul li p:last-child, .competences ul li p:last-child, .additional-info ul li p:last-child {
+    margin-bottom: 0;
+}

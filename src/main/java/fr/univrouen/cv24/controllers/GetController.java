@@ -148,7 +148,7 @@ public class GetController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de la génération du XML.");
         }
     }
-	
+	/*
 	@GetMapping("/cv/resume/html")	
     public ResponseEntity<String> getResumeAsHtml() {
         try {
@@ -231,6 +231,7 @@ public class GetController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+    */
 
     // Méthode pour obtenir le diplôme le plus élevé ou le plus récent
     private Diplome getHighestDiploma(CV cv) {

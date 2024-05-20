@@ -82,8 +82,7 @@ public class PostController {
 	            Cv24Type cv24 = (Cv24Type) unmarshaller.unmarshal(new StringReader(flux));
 
 	         // Vérification si le CV existe déjà
-	            Optional<CV> existingCV = cvRepository.findByGenreAndNomAndPrenomAndTel(
-	                cv24.getIdentite().getGenre().toString(),
+	            Optional<CV> existingCV = cvRepository.findByNomAndPrenomAndTel(	                
 	                cv24.getIdentite().getNom(),
 	                cv24.getIdentite().getPrenom(),
 	                cv24.getIdentite().getTel()
@@ -96,28 +95,29 @@ public class PostController {
 
 	            CV newCV = new CV();
 	            newCV.setGenre(cv24.getIdentite().getGenre().toString());
-	            newCV.setPrenom(cv24.getIdentite().getNom());
-	            newCV.setNom(cv24.getIdentite().getPrenom());
-	            newCV.setTel(cv24.getIdentite().getTel());
-	            newCV.setMel(cv24.getIdentite().getMel());
+	            newCV.setPrenom(cv24.getIdentite().getPrenom());
+	            newCV.setNom(cv24.getIdentite().getNom());
+	            if(cv24.getIdentite().getTel() != null)  newCV.setTel(cv24.getIdentite().getTel());
+	            if(cv24.getIdentite().getMel() != null) newCV.setMel(cv24.getIdentite().getMel());
 	            newCV.setObjectif(cv24.getObjectif().getObjectif());
 	            newCV.setStatus(cv24.getObjectif().getStatus().value());
 
 	            List<ExperienceProfessionnelle> experiences = new ArrayList<>();
+	            if(cv24.getProf().getDetail() != null) {
 	            for (DetailType exp : cv24.getProf().getDetail()) {
 	                ExperienceProfessionnelle experience = new ExperienceProfessionnelle();
 	                experience.setTitre(exp.getTitre());
 	                experience.setDateDebut(exp.getDatedeb().toGregorianCalendar().getTime());
-	                experience.setDateFin(exp.getDatefin().toGregorianCalendar().getTime());
+	                if(exp.getDatefin() != null) experience.setDateFin(exp.getDatefin().toGregorianCalendar().getTime());
 	                experience.setCv(newCV);
 	                experiences.add(experience);
 	            }
 	            newCV.setExperiencesProfessionnelles(experiences);
-
+	            }
 	            List<Diplome> diplomes = new ArrayList<>();
 	            for (DipType dipl : cv24.getCompetences().getDiplome()) {
 	                Diplome diplome = new Diplome();
-	                diplome.setInstitut(dipl.getInstitut());
+	                if(dipl.getInstitut() != null) diplome.setInstitut(dipl.getInstitut());
 	                diplome.setDateObtention(dipl.getDate().toGregorianCalendar().getTime());
 	                diplome.setNiveau(dipl.getNiveau());
 	                List<TitreDiplome> titres = new ArrayList<>();
@@ -152,8 +152,8 @@ public class PostController {
 	                c.setCv(newCV);
 	                c.setLang(lv.getLang());
 	                c.setCert(lv.getCert().value());
-	                c.setNivi(lv.getNivi());
-	                c.setNivs(lv.getNivs().value());
+	                if(lv.getNivi() != null) c.setNivi(lv.getNivi().toString());
+	                if(lv.getNivs() != null) c.setNivs(lv.getNivs().value());
 	                competences.add(c);
 	            }
 	            newCV.setCompetences(competences);
