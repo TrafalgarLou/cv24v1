@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<cv24 xmlns="http://univ.fr/cv24">
+  <identite>
+    <genre>MME</genre>
+    <nom>CHABANA</nom>
+    <prenom>LIZA</prenom>
+    <tel>0666666666</tel>
+    <mel>chabanaliza99@gmail.com</mel>
+  </identite>
+  <objectif status="stage">
+    <objectif>XML</objectif>
+  </objectif>
+  <prof>
+    <detail>
+      <datedeb>2025-01-01</datedeb>
+      <datefin>2025-01-01</datefin>
+      <titre>TP DE XML </titre>
+    </detail>
+  </prof>
+  <competences>
+    <diplome niveau="5">
+      <titre>Master GIL</titre>
+      <date>2001-01-01</date>
+    </diplome>
+    <certif>
+      <datedeb>2025-01-01</datedeb>
+      <titre>TP DE XML</titre>    
+    </certif>
+  </competences>
+  <divers>
+    <lv cert="MAT" lang="kb" nivi="890" nivs="A1"/>
+    <autre comment="" titre=""/>
+  </divers>
+</cv24>

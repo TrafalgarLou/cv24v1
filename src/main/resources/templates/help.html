@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Aide pour CV24</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .route { margin-bottom: 20px; }
+        .route h2 { margin: 0; color: #007BFF; }
+        .route p { margin: 5px 0; }
+        .route code { background: #f8f8f8; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Liste des routes de l'application CV24 :</h1>
+
+    <div class="route">
+        <h2>/cv24/html</h2>
+        <p><strong>Méthode :</strong> GET</p>
+        <p><strong>Résumé :</strong> Affiche les détails d'un CV en format HTML.</p>
+        <p><strong>Retour :</strong> HTML</p>
+    </div>
+
+    <div class="route">
+        <h2>/cv24/xml</h2>
+        <p><strong>Méthode :</strong> GET</p>
+        <p><strong>Résumé :</strong> Retourne les détails d'un CV en format XML.</p>
+        <p><strong>Retour :</strong> XML</p>
+    </div>
+
+    <div class="route">
+        <h2>/cv24/delete/{id}</h2>
+        <p><strong>Méthode :</strong> DELETE</p>
+        <p><strong>Résumé :</strong> Supprime un CV de la base de données.</p>
+        <p><strong>Retour :</strong> JSON (status de l'opération)</p>
+    </div>
+
+    <div class="route">
+        <h2>/cv/resume/html</h2>
+        <p><strong>Méthode :</strong> GET</p>
+        <p><strong>Résumé :</strong> Affiche un résumé des CV en format HTML.</p>
+        <p><strong>Retour :</strong> HTML</p>
+    </div>
+
+    <div class="route">
+        <h2>/validate-xml</h2>
+        <p><strong>Méthode :</strong> POST</p>
+        <p><strong>Résumé :</strong> Valide un document XML par rapport à un schéma XSD.</p>
+        <p><strong>Retour :</strong> Texte (résultat de la validation)</p>
+    </div>
+</body>
+</html>

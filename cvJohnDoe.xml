@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cv24 xmlns="http://univ.fr/cv24" xsi:schemaLocation="http://univ.fr/cv24 schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <identite>
+    <genre>M</genre>
+    <nom>DOE</nom>
+    <prenom>John</prenom>
+  </identite>
+  <objectif status="emploi">
+    <objectif>Rechercher un poste de developpeur logiciel dans une entreprise innovante.</objectif>
+  </objectif>
+  <prof>
+    <detail>
+      <datedeb>2010-01-15</datedeb>
+      <datefin>2015-06-30</datefin>
+      <titre>Developpeur Junior chez TechCorp</titre>
+    </detail>
+    <detail>
+      <datedeb>2016-02-20</datedeb>
+      <datefin>2020-08-15</datefin>
+      <titre>Developpeur Senior chez InnovateX</titre>
+    </detail>
+    <detail>
+      <datedeb>2021-01-01</datedeb>
+      <datefin>2023-05-01</datefin>
+      <titre>Lead Developer chez SoftSolutions</titre>
+    </detail>
+  </prof>
+  <competences>
+    <diplome niveau="5">
+      <titre>Master en Informatique</titre>
+      <date>2012-06-15</date>
+      <institut>Universite de Paris</institut>
+    </diplome>
+    <diplome niveau="3">
+      <titre>Licence en Informatique</titre>
+      <date>2010-06-20</date>
+      <institut>Universite de Lyon</institut>
+    </diplome>
+    <certif>
+      <datedeb>2013-03-10</datedeb>
+      <datefin>2013-06-10</datefin>
+      <titre>Certification Java Oracle</titre>
+    </certif>
+  </competences>
+  <divers>
+    <lv cert="TOEIC" lang="en" nivs="C1" />
+    <lv cert="TOEIC" lang="es" nivs="B2" />
+    <autre titre="Benevolat a la Croix Rouge" comment="Participation a des campagnes de sensibilisation et aide aux personnes en difficulte." />
+    <autre titre="Sport" comment="Pratique reguliere de la course a pied et du football." />
+  </divers>
+</cv24>

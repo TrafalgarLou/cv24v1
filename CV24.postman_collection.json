@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "2f034ff4-997b-489d-ba49-e696b3fe30b5",
+		"name": "CV24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34384481"
+	},
+	"item": [
+		{
+			"name": "ValidationXML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\n<cv24 xmlns=\"http://univ.fr/cv24\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://univ.fr/cv24 cv24.tp1.xsd\">\n  <identite>\n    <genre>Mme</genre>\n    <nom>CHABANA</nom>\n    <prenom>LIZA</prenom>\n    <tel>0666666666</tel>\n    <mel>chabanaliza99@gmail.com</mel>\n  </identite>\n  <objectif status=\"stage\">\n    <objectif>XML</objectif>\n  </objectif>\n  <prof>\n    <detail>\n      <datedeb>2025-01-01</datedeb>\n      <datefin>2025-01-01</datefin>\n      <titre>TP DE XML </titre>\n    </detail>\n  </prof>\n  <competences>\n    <diplome niveau=\"5\"> \n      <titre>Master GIL</titre>\n      <date>2001-01-01</date>      \n    </diplome>\n    <certif>\n      <datedeb>2025-01-01</datedeb>\n      <titre>TP DE XML</titre>\n    </certif>\n  </competences>\n  <divers>\n    <lv cert=\"MAT\" lang=\"kb\" nivi=\"890\" nivs=\"A1\"/>\n    <autre comment=\"\" titre=\"\"/>\n  </divers>\n</cv24>",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/validate-xml",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"validate-xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestDéserialisation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\n<cv24 xmlns=\"http://univ.fr/cv24\">\n  <identite>\n    <genre>MME</genre>\n    <nom>CHABANA</nom>\n    <prenom>LIZA</prenom>\n    <tel>0666666666</tel>\n    <mel>chabanaliza99@gmail.com</mel>\n  </identite>\n  <objectif status=\"stage\">\n    <objectif>XML</objectif>\n  </objectif>\n  <prof>\n    <detail>\n      <datedeb>2025-01-01</datedeb>\n      <datefin>2025-01-01</datefin>\n      <titre>TP DE XML </titre>\n    </detail>\n  </prof>\n  <competences>\n    <diplome niveau=\"5\"> \n      <titre>Master GIL</titre>\n      <date>2001-01-01</date>      \n    </diplome>\n    <certif>\n      <datedeb>2025-01-01</datedeb>\n      <titre>TP DE XML</titre>\n    </certif>\n  </competences>\n  <divers>\n    <lv cert=\"MAT\" lang=\"kb\" nivi=\"890\" nivs=\"A1\"/>\n    <autre comment=\"\" titre=\"\"/>\n  </divers>\n</cv24>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/test-unmarshalling",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"test-unmarshalling"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\n<cv24 xmlns=\"http://univ.fr/cv24\">\n  <identite>\n    <genre>MME</genre>\n    <nom>CHABANA</nom>\n    <prenom>LIZA</prenom>\n    <tel>0666666666</tel>\n    <mel>chabanaliza99@gmail.com</mel>\n  </identite>\n  <objectif status=\"stage\">\n    <objectif>XML</objectif>\n  </objectif>\n  <prof>\n    <detail>\n      <datedeb>2025-01-01</datedeb>\n      <datefin>2025-01-01</datefin>\n      <titre>TP DE XML </titre>\n    </detail>\n  </prof>\n  <competences>\n    <diplome niveau=\"5\">\n      <titre>Master GIL</titre>\n      <date>2001-01-01</date>\n    </diplome>\n    <certif>\n      <datedeb>2025-01-01</datedeb>\n      <titre>TP DE XML</titre>    \n    </certif>\n  </competences>\n  <divers>\n    <lv cert=\"MAT\" lang=\"kb\" nivi=\"890\" nivs=\"A1\"/>\n    <autre comment=\"\" titre=\"\"/>\n  </divers>\n</cv24>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app-1e1b29bb-7ddc-4fa2-beab-0cbe0094d035.cleverapps.io/insert",
+					"protocol": "https",
+					"host": [
+						"app-1e1b29bb-7ddc-4fa2-beab-0cbe0094d035",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resumeXML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-1e1b29bb-7ddc-4fa2-beab-0cbe0094d035.cleverapps.io/cv/resume/xml",
+					"protocol": "https",
+					"host": [
+						"app-1e1b29bb-7ddc-4fa2-beab-0cbe0094d035",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv",
+						"resume",
+						"xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resumeHTML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/cv/resume/html",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"cv",
+						"resume",
+						"html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getcvxml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/cv24/xml?id=3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"cv24",
+						"xml"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getcvhtml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/cv24/html?id=3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"cv24",
+						"html"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<cv24 xmlns=\"http://univ.fr/cv24\" xsi:schemaLocation=\"http://univ.fr/cv24 schema.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <identite>\n    <genre>M</genre>\n    <nom>DOE</nom>\n    <prenom>John</prenom>\n    <tel>0766533522</tel>\n  </identite>\n  <objectif status=\"emploi\">\n    <objectif>Rechercher un poste de developpeur logiciel dans une entreprise innovante.</objectif>\n  </objectif>\n  <prof>\n    <detail>\n      <datedeb>2010-01-15</datedeb>\n      <datefin>2015-06-30</datefin>\n      <titre>Developpeur Junior chez TechCorp</titre>\n    </detail>\n    <detail>\n      <datedeb>2016-02-20</datedeb>\n      <datefin>2020-08-15</datefin>\n      <titre>Developpeur Senior chez InnovateX</titre>\n    </detail>\n    <detail>\n      <datedeb>2021-01-01</datedeb>\n      <datefin>2023-05-01</datefin>\n      <titre>Lead Developer chez SoftSolutions</titre>\n    </detail>\n  </prof>\n  <competences>\n    <diplome niveau=\"5\">\n      <titre>Master en Informatique</titre>\n      <date>2012-06-15</date>\n      <institut>Universite de Paris</institut>\n    </diplome>\n    <diplome niveau=\"3\">\n      <titre>Licence en Informatique</titre>\n      <date>2010-06-20</date>\n      <institut>Universite de Lyon</institut>\n    </diplome>\n    <certif>\n      <datedeb>2013-03-10</datedeb>\n      <datefin>2013-06-10</datefin>\n      <titre>Certification Java Oracle</titre>\n    </certif>\n  </competences>\n  <divers>\n    <lv cert=\"TOEIC\" lang=\"en\" nivs=\"C1\" />\n    <lv cert=\"TOEIC\" lang=\"es\" nivs=\"B2\" />\n    <autre titre=\"Benevolat a la Croix Rouge\" comment=\"Participation a des campagnes de sensibilisation et aide aux personnes en difficulte.\" />\n    <autre titre=\"Sport\" comment=\"Pratique reguliere de la course a pied et du football.\" />\n  </divers>\n</cv24>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/testBdd",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"testBdd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accueil",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
