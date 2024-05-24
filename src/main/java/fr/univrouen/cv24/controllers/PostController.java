@@ -51,14 +51,7 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 
 @RestController
-public class PostController {
-		@RequestMapping(value = "/testPost", method = RequestMethod.POST,
-				consumes = "application/xml")
-		public String postTest(@RequestBody String flux) {
-			return ("<result><response>Message reçu : </response>"
-					+ flux + "</result>");
-		}
-		
+public class PostController {				
 		
 		@Autowired
 	    private CVRepository cvRepository;

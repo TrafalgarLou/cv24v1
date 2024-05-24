@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Erreur CV non trouvé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .error-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .error-container h1 {
+            color: #ff4c4c;
+        }
+        .error-container p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Erreur</h1>
+        <p>Le CV avec l'identifiant <strong th:text="${id}"></strong> n'a pas été trouvé.</p>
+        <p>Status: <strong th:text="${status}"></strong></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fr.univrouen.cv24.controllers"},{"l":"fr.univrouen.cv24.model"},{"l":"fr.univrouen.cv24.model.parser"},{"l":"fr.univrouen.cv24.repository"}];updateSearchResults();
